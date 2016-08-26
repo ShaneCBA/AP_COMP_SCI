@@ -16,8 +16,6 @@ public class IdealWeight {
 		print("\tInches remaining: ");heightIn = scan.nextInt();
 
 
-
-
 	}
 	public static double calculateFemale(double height){
 		return 0;
