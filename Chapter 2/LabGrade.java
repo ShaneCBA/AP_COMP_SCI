@@ -2,6 +2,7 @@
 //In class activities (60%)
 
 import java.util.*;
+import java.text.*;
 
 public class LabGrade {
 	public static void main(String[] args){
@@ -11,6 +12,8 @@ public class LabGrade {
 		int maxPointsPostLab;
 		int pointsInClass;
 		int maxPointsInClass;
+
+		NumberFormat percent = NumberFormat.getPercentInstance();
 
 		Scanner scan = new Scanner(System.in);
 
@@ -24,10 +27,13 @@ public class LabGrade {
 		System.out.print("Maximum possible points for in class assignments: ");maxPointsInClass = scan.nextInt();
 		System.out.print("");
 
-		double pointsOOC = (pointsPreLab+pointsPostLab)/(maxPointsPreLab+maxPointsPostLab);
-		double pointIC = pointsInClass/maxPointsInClass;
+		double pointsOOC = (double)(pointsPostLab+pointsPreLab)/(double)(maxPointsPostLab+maxPointsPreLab);
+		double pointIC = (double)pointsInClass/(double)maxPointsInClass;
 
-		double avg = (pointsOOC/.4)+(pointIC/.6);
-		System.out.print(pointsOOC);
+		double avg = (pointsOOC*.4)+(pointIC*.6);
+
+		System.out.println("\nOut of Class Average: "+percent.format(pointsOOC));
+		System.out.println("In Class Average: "+percent.format(pointIC));
+		System.out.println("Total Average: "+percent.format(avg));
 	}
 }
