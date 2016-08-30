@@ -29,9 +29,9 @@ public class BaseConvert {
 			placeDivision[i] = placeDivision[i-1]/base;
 		}
 
-		for (Integer item:places) {
-			newNum.concat(item.toString());
-			System.out.print(item);//.toString());
+		for (int i = 3; i >= 0; i--) {//Integer item:places) {
+			newNum.concat(places[i].toString());
+			//System.out.print(item);//.toString());
 		}
 
 		System.out.println(newNum);
