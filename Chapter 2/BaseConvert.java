@@ -5,8 +5,8 @@ public class BaseConvert {
 		int num, base;
 		String newNum = new String("");
 
-		int [] places = new int[4];
-		int [] placeDivision = new int[4];
+		Integer [] places = new Integer[4];
+		Integer [] placeDivision = new Integer[4];
 
 		final int MAXDIGITS;
 
@@ -30,10 +30,10 @@ public class BaseConvert {
 		}
 
 		for (int i = 3; i >= 0; i--) {//Integer item:places) {
-			newNum.concat(places[i].toString());
-			//System.out.print(item);//.toString());
+			//newNum.concat(places[i].toString());
+			System.out.print(places[i].toString());//.toString());
 		}
 
-		System.out.println(newNum);
+		System.out.println("\n\n");
 	}
 }
