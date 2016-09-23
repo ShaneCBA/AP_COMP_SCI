@@ -23,10 +23,22 @@ public class Dates
 	System.out.print("Year: ");year = scan.nextInt();
 
 	//Check to see if month is valid
-
+	if (!(month <=12 && month >= 1)){
+		System.out.println("Month Invalid");
+	}
 
 	//Check to see if year is valid
+	boolean monthValid;
+	switch (month) {
+		case 1:
+			if (daysInMonth <= 31) monthValid = true;
+		break;
 
+		case 2:
+			if ((year%4==0)&&((year%100!=0)||(year%400==0))(daysInMonth <= 28)) monthValid = true;
+		break;
+
+	}
 
 	//Determine whether it's a leap year
 
