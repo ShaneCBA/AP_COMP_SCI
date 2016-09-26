@@ -11,9 +11,7 @@ public class Dates
     public static void main(String[] args)
     {
 	int month, day, year;   //date read in from user
-	int daysInMonth;        //number of days in month read in
-	boolean monthValid, yearValid, dayValid;  //true if input from user is valid
-	boolean leapYear;  //true if user's year is a leap year
+	boolean monthValid = true, yearValid = true, dayValid = true;  //true if input from user is valid
 
 	Scanner scan = new Scanner (System.in);
 
@@ -22,34 +20,69 @@ public class Dates
 	System.out.print("Day: ");day = scan.nextInt();
 	System.out.print("Year: ");year = scan.nextInt();
 
-	//Check to see if month is valid
-	if (!(month <=12 && month >= 1)){
-		System.out.println("Month Invalid");
-	}
+	yearValid = (Math.abs(year) == year);
 
-	//Check to see if year is valid
-	boolean monthValid;
 	switch (month) {
 		case 1:
-			if (daysInMonth <= 31) monthValid = true;
+			dayValid = (day <= 31);
 		break;
 
 		case 2:
-			if ((year%4==0)&&((year%100!=0)||(year%400==0))(daysInMonth <= 28)) monthValid = true;
+			dayValid =  ((((year%4==0)&&(year%100!=0)||(year%400==0))&&(day <= 29))||(day <= 28));
 		break;
 
+		case 3:
+			dayValid = (day <= 31);
+		break;
+
+		case 4:
+			dayValid = (day <= 30);
+		break;
+
+		case 5:
+			dayValid = (day <= 31);
+		break;
+
+		case 6:
+			dayValid = (day <= 30);
+		break;
+
+		case 7:
+			dayValid = (day <= 31);
+		break;
+
+		case 8:
+			dayValid = (day <= 31);
+		break;
+
+		case 9:
+			dayValid = (day <= 30);
+		break;
+
+		case 10:
+			dayValid = (day <= 31);
+		break;
+
+		case 11:
+			dayValid = (day <= 30);
+		break;
+
+		case 12:
+			dayValid = (day <= 31);
+		break;
+
+		default:
+			monthValid = false;
+		break;
 	}
 
-	//Determine whether it's a leap year
-
-
-	//Determine number of days in month
-
-
-	//Use number of days in month to check to see if day is valid
-
-
-	//Determine whether date is valid and print appropriate message
+	if (monthValid && dayValid && yearValid) {
+		System.out.println("Date Valid");
+		if (month == 2 && (((year%4==0)&&(year%100!=0)||(year%400==0))&&(day <= 29))) System.out.println("It's a leap year");
+	}
+	else {
+		System.out.println("Date Invalid");
+	}
 
     }
 }

@@ -35,13 +35,11 @@ public class Grades
 
 	while (grade >= 0)
 	    {
-		sumOfGrades = sumOfGrades + grade;
-		numStudents = numStudents + 1;
+		sumOfGrades += grade;
+		numStudents++;
 
-		if (grade < 60)
-			numFail = numFail + 1;
-		else
-			numPass = numPass + 1;
+		numFail += (grade < 60) ? 1:0;
+		numPass += (grade >= 60) ? 1:0;
 
 		// Read the next grade
 		System.out.print ("Enter the next grade (a negative to quit): ");
