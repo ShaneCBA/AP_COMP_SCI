@@ -45,7 +45,12 @@ public class Guess
 			System.out.print("Your guess was too low: ");
 		}
 	}
-	System.out.println("");
+	System.out.println("You guessed correct!");
+	System.out.println("Low:"+low);
+	System.out.println("High:"+high);
+	System.out.println("Total: "+numOfGuesses);
+
+
 
 
 
