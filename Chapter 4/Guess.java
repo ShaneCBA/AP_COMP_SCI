@@ -12,9 +12,9 @@ public class Guess
     public static void main(String[] args)
     {
     int numToGuess;       //Number the user tries to guess
-    int guess;            //The user's guess
+    int guess=-255;            //The user's guess
 
-	int numOfGuesses;
+	int numOfGuesses=0;
 
 	int low=0, high=0;
 
@@ -22,13 +22,12 @@ public class Guess
 	Scanner scan = new Scanner (System.in);
 
 	//randomly generate the  number to guess
-	numToGuess = generator.nextInt();
+	numToGuess = generator.nextInt(9)+1;
 
 	//print message asking user to enter a guess
 	System.out.print("Enter your guess: ");
 
 	//read in guess
-	guess = scan.nextInt();
 
 	while ( guess != numToGuess ) {
 	    guess = scan.nextInt();
