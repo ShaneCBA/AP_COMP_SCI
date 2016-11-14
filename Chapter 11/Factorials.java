@@ -18,16 +18,18 @@ public class Factorials
 		System.out.print("Enter an integer: ");
 		int val = scan.nextInt();
 
+			try{
+				System.out.println("Factorial(" + val + ") = "
+						   + MathUtils.factorial(val));
 
-			System.out.println("Factorial(" + val + ") = "
-					   + MathUtils.factorial(val));
-		    }
-
-		    {
-
-
+			}
+			catch (IllegalArgumentException e)
+			{
+				e.printStackTrace();
+			}
+			/*
 		System.out.print("Another factorial? (y/n) ");
-		keepGoing = scan.next();
+		keepGoing = scan.next();*/
 	    }
     }
 }
