@@ -6,4 +6,3 @@ set today=%MyDate:~0,4%-%MyDate:~4,2%-%MyDate:~6,2%
 git commit -m %today%
 git push
 echo %today%
-echo !%today%!
