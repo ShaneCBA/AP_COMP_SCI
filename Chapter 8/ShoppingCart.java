@@ -19,10 +19,10 @@ public class ShoppingCart
     // -----------------------------------------------------------
     public ShoppingCart()
     {
- capacity = 5;
- itemCount = 0;
- totalPrice = 0.0;
- cart = new Item[capacity];
+	 capacity = 5;
+	 itemCount = 0;
+	 totalPrice = 0.0;
+	 cart = new Item[capacity];
     }
 
     // -------------------------------------------------------
@@ -30,8 +30,12 @@ public class ShoppingCart
     // -------------------------------------------------------
     public void addToCart(String itemName, double price, int quantity)
     {
-      totalprice += price;
-      
+      totalPrice += price;
+      if (itemCount >= cart.length-1) {
+		  increaseSize();
+	  }
+      cart[itemCount] = new Item(itemName, price, quantity);
+      itemCount++;
     }
 
     // -------------------------------------------------------
