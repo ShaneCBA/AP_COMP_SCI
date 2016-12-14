@@ -88,7 +88,7 @@ public class IntegerList
           if (list[j] > list[minIndex])
             minIndex = j;
         }
-        
+
         //swap list[i] with smallest element
         int temp = list[i];
         list[i] = list[minIndex];
@@ -134,17 +134,17 @@ public class IntegerList
     {
          int low = 0;
          int high = list.length - 1;
-          
+
          while(low <= high) {
              int mid = (low + high)/2;
-             
-             if(target > list[mid]) {
+
+             if(target < list[mid]) {
                  low = mid + 1;
              }
-             if(target < list[mid]) {
+             else if(target > list[mid]) {
                  high = mid - 1;
              }
-             if(target == list[mid]) {
+             else if(target == list[mid]) {
                  return mid;
              }
         }
