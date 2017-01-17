@@ -22,21 +22,18 @@ public class SortedIntList extends IntList {
 					}
 					if (list[i] >= value) {
 						int temp;
-						int temp2 = list[i];
-						list[i] = value;
-						list[i+1]=temp2;
+						int temp2 = value;
 
-						for (int n = i+1; n < numElements; n++) {
+						for (int n = i; n < numElements+1; n++) {
 							temp = list[n];
 							list[n] = temp2;
-							temp2 = list[n+1];
-							System.out.println(this);
+							temp2 = temp;
 						}
 						break;
 					}
 					System.out.println(this);
 				}
-			numElements++;
+				numElements++;
 			}
 		}
     }
