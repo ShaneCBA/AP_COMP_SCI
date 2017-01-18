@@ -6,7 +6,9 @@ import java.util.*;
 
 		 TestQuestion[] testQuestions;
 		 testQuestions = new TestQuestion[scan.nextInt()];
+
 		 for (int i = 0; i < testQuestions.length; i++){
+
 		 	switch (scan.next().toLowerCase().charAt(0)) {
 				case 'e':
 					testQuestions[i] = new MultChoice();
@@ -19,6 +21,7 @@ import java.util.*;
 					testQuestions[i].readQuestion(scan);
 				break;
 			}
+
 		 }
 	 }
  }

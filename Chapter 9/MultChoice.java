@@ -23,19 +23,19 @@ public class MultChoice extends TestQuestion
     //---------------------------------------
     protected void readQuestion(Scanner scan)
     {
-	numChoices = scan.nextInt();
-	choices = new String[numChoices];
+		numChoices = scan.nextInt();
+		choices = new String[numChoices];
 
-	//Eat up newline after integer
-	choices = new String[scan.nextInt()];
+		//Eat up newline after integer
 
-	//Read question
-	question = scan.nextLine();
+		//Read question
+		question = scan.nextLine();
 
-	//Read choices
-	for (int i = 0; i < choices.length; i++){
-		choices[i] = scan.nextLine();
-    }
+		//Read choices
+		for (int i = 0; i < choices.length; i++){
+			choices[i] = scan.nextLine();
+		}
+	}
 
     //---------------------------------------
     // Returns the questions and each of the
@@ -43,9 +43,9 @@ public class MultChoice extends TestQuestion
     //---------------------------------------
     public String toString()
     {
-	String ans = question + "\n";
-	for (int i=0; i<numChoices; i++)
-	    ans += "\t" + (char)('a'+i) + ". " + choices[i] + "\n";
-	return ans;
+		String ans = question + "\n";
+		for (int i=0; i<numChoices; i++)
+			ans += "\t" + (char)('a'+i) + ". " + choices[i] + "\n";
+		return ans;
     }
 }

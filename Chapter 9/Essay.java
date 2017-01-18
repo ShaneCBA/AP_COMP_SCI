@@ -19,7 +19,7 @@ public class Essay extends TestQuestion
     //---------------------------------------
     protected void readQuestion(Scanner scan)
     {
-		int numLines = scan.nextInt();
+		numLines = scan.nextInt();
 		question = scan.nextLine();
 
     }

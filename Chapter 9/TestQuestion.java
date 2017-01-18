@@ -1,9 +1,9 @@
+import java.util.*;
+
 public abstract class TestQuestion {
 	protected String question;
 
-	protected abstract void readQuestion() {
-		System.out.println(question);
-	}
+	protected abstract void readQuestion(Scanner scan);
 
 
 }
