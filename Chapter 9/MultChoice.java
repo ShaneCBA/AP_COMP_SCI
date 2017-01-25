@@ -44,8 +44,8 @@ public class MultChoice extends TestQuestion
     public String toString()
     {
 		String ans = question + "\n";
-		for (int i=0; i<numChoices; i++)
-			ans += "\t" + (char)('a'+i) + ". " + choices[i] + "\n";
+		for (int i=1; i<numChoices; i++)
+			ans += "\t" + (char)('a'+i-1) + ". " + choices[i] + "\n";
 		return ans;
     }
 }
