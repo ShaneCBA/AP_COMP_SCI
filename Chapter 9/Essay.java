@@ -20,7 +20,10 @@ public class Essay extends TestQuestion
     protected void readQuestion(Scanner scan)
     {
 		numLines = scan.nextInt();
+		System.out.println("NumLines: "+numLines);
+		scan.nextLine();
 		question = scan.nextLine();
+		System.out.println("Question: "+question);
 
     }
 

@@ -24,12 +24,15 @@ public class MultChoice extends TestQuestion
     protected void readQuestion(Scanner scan)
     {
 		numChoices = scan.nextInt();
+		System.out.println(numChoices);
 		choices = new String[numChoices];
 
 		//Eat up newline after integer
 
 		//Read question
+		scan.nextLine();
 		question = scan.nextLine();
+		System.out.println(question);
 
 		//Read choices
 		for (int i = 0; i < choices.length; i++){
