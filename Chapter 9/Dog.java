@@ -33,6 +33,8 @@ public abstract class Dog
 	return "Woof";
     }
 
+    public abstract int avgBreedWeight();
+
 
     // ------------------------------------------------------------
     // Require that subclasses have an avgBreedWeight method

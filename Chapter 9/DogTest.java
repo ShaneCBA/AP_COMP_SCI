@@ -11,7 +11,9 @@ public class DogTest
     {
 		Dog lab = new Labrador("Spike", "Green");
 		System.out.println(lab.getName() + " says " + lab.speak());
+		System.out.println(lab.getName() + " weighs " + lab.avgBreedWeight());
 		Yorkshire york = new Yorkshire("Russ");
 		System.out.println(york.getName() + " says " + york.speak());
+		System.out.println(york.getName() + " weighs " + york.avgBreedWeight());
     }
 }

@@ -8,11 +8,13 @@
 
 public class Yorkshire extends Dog
 {
+    private int breedWeight = 15;
+
 	public Yorkshire(String name)
 	{
 		super(name);
 	}
-	
+
 	//----------------------------------------------------------------------------
 	// Small bark -- overrides speak method in Dog
 	// ---------------------------------------------------------------------------
@@ -20,4 +22,8 @@ public class Yorkshire extends Dog
 	{
 		return "woof";
 	}
+    public int avgBreedWeight()
+    {
+	return breedWeight;
+    }
 }
