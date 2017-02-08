@@ -24,7 +24,7 @@ public class BaseConversion
 	base = scan.nextInt();
 
 	// Call convert and print the answer
-
+	System.out.println(convert(base10Num, base));
     }
 
 
@@ -35,7 +35,13 @@ public class BaseConversion
     {
 	int quotient;  // the quotient when num is divided by base b
 	int remainder; // the remainder when num is divided by base b
-
+	remainder = num % b;
+	quotient = num / b;
+	if (quotient == 0){return (Integer.toString(remainder));
+	}
+	else {
+	return (convert(quotient,b)+Integer.toString(remainder));
+	}
 
 
     }
