@@ -20,6 +20,8 @@ public class TestFib
 
 	fib = Fib.fib1(n);
 	System.out.println("Fib1(" + n + ") is " + fib);
+	fib = Fib.fib2(n);
+	System.out.println("Fib2(" + n + ") is " + fib);
     }
 }
 
