@@ -85,7 +85,7 @@ public class Card {
 	 * @return a <code>String</code> containing the rank, suit,
 	 *         and point value of the card.
 	 */
-	@Override
+	//@Override
 	public String toString() {
 		return rank + " of " + suit + " (point value = " + pointValue + ")";
 	}

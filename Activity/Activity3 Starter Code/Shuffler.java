@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -50,6 +51,8 @@ public class Shuffler {
 			System.out.println();
 		}
 		System.out.println();
+		System.out.println("PERMUTABLE: ");
+		System.out.println(arePermutations(new int[]{1,2,2,3},new int[]{2,1,3,2})?"Yes":"No");
 	}
 
 
@@ -60,7 +63,24 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] shuffled = new int[values.length];
+		/*int i = 0;
+		while (k < values.length){
+			if (){}
+			i+=2;
+		}*/
+
+		int k = 0;
+		for (int i = 0; i < values.length/2; i++){
+			shuffled[k]=values[i];
+			k+=2;
+		}
+
+		k = 1;
+		for (int i = values.length/2+1; i < values.length; i++){
+			shuffled[k]=values[i];
+			k+=2;
+		}
 	}
 
 	/**
@@ -75,6 +95,40 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int k = values.length;
+		Random rand = new Random();
+		for (int i = k-1; i >= 0; i--){
+			int r = rand.nextInt(k);
+			int t = values[i];
+			values[i] = values[r];
+			values[r] = values[i];
+		}
+	}
+
+	public static String flip(){
+		Random rand = new Random();
+		return (rand.nextInt(3)==2)?"TAILS":"HEADS";
+	}
+
+	public static boolean arePermutations(int[] a1, int[] a2){
+		//List<Integer> counts = new ArrayList<Integer>(Collections.nCopies(a1.length, 0));
+		Map<Integer,Integer> counts = new HashMap<Integer,Integer>();
+		for (int i = 0; i < a1.length; i++){
+			if (counts.get(a1[i])==null){
+				counts.put(a1[i],0);
+			}
+			counts.put(a1[i],counts.get(a1[i])+1);
+		}
+		for (int i = 0; i < a2.length; i++){
+			if (counts.get(a2[i])==null){
+				return false;
+			}
+			counts.put(a2[i],counts.get(a2[i])-1);
+		}
+		for (Map.Entry<Integer, Integer> entry : counts.entrySet()){
+			System.out.println(entry.getValue());
+			if (entry.getValue()!=0)return false;
+		}
+		return true;
 	}
 }
